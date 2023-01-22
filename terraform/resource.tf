@@ -15,13 +15,6 @@ resource "azurerm_virtual_network" "myvnet" {
 resource "azurerm_subnet" "myvnetsubnet" {
   virtual_network_name = azurerm_virtual_network.myvnet.name
   resource_group_name = azurerm_resource_group.my_rg.name
-  name = "websubnet"
-  address_prefixes = [ "192.168.0.0/24" ]
-}
-
-resource "azurerm_subnet" "myvnetsubnet" {
-  virtual_network_name = azurerm_virtual_network.myvnet.name
-  resource_group_name = azurerm_resource_group.my_rg.name
   name = "appsubnet"
   address_prefixes = [ "192.168.0.0/24" ]
 }
